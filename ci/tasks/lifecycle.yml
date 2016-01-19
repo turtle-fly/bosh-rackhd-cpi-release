@@ -5,7 +5,7 @@ inputs:
 - name: bosh-cpi-release
 - name: stemcell
 run:
-  path: bosh-cpi-release/ci/tasks/lifecycle.sh
+  path: bosh-cpi-release/ci/tasks/lifecycle-disk-first.sh
 params:
   RACKHD_API_URI:               replace-me
   AGENT_PUBLIC_KEY:             replace-me

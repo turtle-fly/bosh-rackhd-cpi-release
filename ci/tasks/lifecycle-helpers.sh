@@ -121,7 +121,11 @@ EOF
   cat create_disk_request
 
   # Run create_disk
-  disk_cid=$(cat create_disk_request | ./rackhd-cpi --configPath=${config_path} | jq .result)
+  local result=$(cat create_disk_request | ./rackhd-cpi --configPath=${config_path})
+
+  echo ${result}
+
+  disk_cid=$(echo ${result} | jq .result)
 }
 
 do_has_disk() {
